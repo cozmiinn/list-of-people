@@ -7,5 +7,11 @@ const people = [
     { firstName: 'Sergiu', secondName: 'Ionescu', dateOfBirth: '1990-02-01' }
 ];
 
+people.sort(function (x, y) {
+    let a = new Date(x.dateOfBirth),
+        b = new Date(y.dateOfBirth);
+    return a - b;
+});
+
 
 console.log(people);
