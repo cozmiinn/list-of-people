@@ -13,5 +13,15 @@ people.sort(function (x, y) {
     return a - b;
 });
 
-
-console.log(people);
+function groupBy(objectArray, property) {
+    return objectArray.reduce((acc, obj) => {
+        const key = obj[property];
+        if (!acc[key]) {
+            acc[key] = [];
+        }
+        acc[key].push(obj);
+        return acc;
+    }, {});
+}
+const groupedPeople = groupBy(people, 'secondName');
+console.log(groupedPeople);
